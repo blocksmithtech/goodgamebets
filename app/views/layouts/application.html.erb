@@ -9,12 +9,28 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <header>
-      <%= render 'layouts/navigation' %>
+    <%= render 'layouts/navigation' %>
+    <% if request.path == '/' %>
+    <header class="business-header d-flex align-items-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <h1 class="display-3 text-white mt-4">They smash and you cash</h1>
+            <p class="text-white">The easiest way to bet on your favorite e-sport events.</p>
+            <%= link_to 'Get Started', new_user_registration_path, class: 'btn btn-primary btn-lg' %>  class="btn btn-primary btn-lg">Large button</a>
+          </div>
+        </div>
+      </div>
     </header>
+    <% end %>
     <main role="main">
        <%= render 'layouts/messages' %>
        <%= yield %>
     </main>
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; GoodGame Bets 2018</p>
+      </div>
+    </footer>
   </body>
 </html>

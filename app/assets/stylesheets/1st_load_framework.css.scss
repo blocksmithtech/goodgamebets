@@ -81,3 +81,34 @@ section {
   @extend .btn-primary;
   @extend .btn-sm;
 }
+
+html  {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  padding-top: 50px;
+  position: relative;
+  margin: 0;
+  padding-bottom: 8rem;
+  min-height: 100%;
+}
+
+footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.business-header {
+  height: 50vh;
+  min-height: 300px;
+  background: image-url("landing-header.jpg") center center no-repeat scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  padding-top: -60px;
+}
