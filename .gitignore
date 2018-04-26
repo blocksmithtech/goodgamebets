@@ -88,3 +88,6 @@ node_modules
 
 #yarn logs
 yarn-error.log
+
+#env vars
+.env
