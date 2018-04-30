@@ -1,8 +1,11 @@
 <div class="row">
   <div class="col-sm-8">
-    <h2 class="mt-4">BET ON YOUR FAVOURITE TEAM</h2>
+    <h2 class="mt-4">What We Do</h2>
+    <p>GoodGameBets provides a betting platform to E-sports enthusiasts very similar to common existing websites for regular sports.</p>
+    <p>Making it more exiting to follow major games and events, were when your team or pick wins you also collect the benefits of that victory.</p>
+    <p>To make all the process simpler and make sure user is always in control of their assets, we make use of the new wave of digital currencies. Built on Top of the OST open protocol, all bets are made using our branded "ggt" token.</p>
     <p>
-      GGT is a new blockchain backed interactive betting platform that allows you to bet on e-sports matches. Our aim is to improve engagement and drive economic growth on the e-sports community!
+      <%= link_to 'Join GGB >', new_user_registration_path, class: 'btn btn-primary btn-lg' %>
     </p>
     <p>
       Bet on your favourite team and your staked tokens will be added to the match pool. Once the match is over the full pool of tokens will be rewarded to the players that bet on the winning team. The ammount of tokens rewarded to each user will depend on how many tokens staked. Higher bets will be rewarded with higher rewards!
@@ -23,8 +26,6 @@
   </div>
 </div>
 
-
-
 <div class="container m-5">
   <div class="row">
     <h3> <strong>Upcoming match</strong> - May 7, 2018 - 01:00</h3>
@@ -56,6 +57,43 @@
         <div class="col-md-8 text-left">
           <h3>Team Liquid</h3>
         </div>
+
+<div class="row">
+  <div class="col-sm-4 my-4">
+    <div class="card">
+      <%= image_tag "csgo.jpg", class: "card-img-top" %>
+      <div class="card-body">
+        <h4 class="card-title">CS:GO</h4>
+        <p class="card-text">From this moment you place bets of games for the biggest majors from the most played shooter in competitive gaming.</p>
+      </div>
+      <div class="card-footer">
+        <a href="#" class="btn btn-primary">Check current open bets</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="col-sm-4 my-4">
+    <div class="card">
+      <%= image_tag "dota2.jpg", class: "card-img-top" %>
+      <div class="card-body">
+        <h4 class="card-title">Dota 2</h4>
+        <p class="card-text">Soon the games for most well known tournaments for this Valve game will be available on our platform.</p>
+      </div>
+      <div class="card-footer">
+        <a href="#" class="btn btn-primary">Coming soon</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4 my-4">
+    <div class="card">
+      <%= image_tag "lol.jpg", class: "card-img-top" %>
+      <div class="card-body">
+        <h4 class="card-title">League of Legends</h4>
+        <p class="card-text">One of the biggest fields on competitive gaming nowadays will also be present on GGB. More detailed news will published soon. </p>
+      </div>
+      <div class="card-footer">
+        <a href="#" class="btn btn-primary">Coming soon</a>
       </div>
     </div>
 
@@ -97,100 +135,5 @@
   </div>
 </div>
 
-<hr/>
-
-
-<div class="container m-5">
-  <div class="row">
-    <h3> <strong>Upcoming match</strong> - May 7, 2018 - 01:00</h3>
-  </div>
-
-  <hr/>
-
-  <div class="row mt-5">
-    <div class="col-md-5">
-      <div class="row">
-        <div class="col-md-8 text-right">
-          <h3>Natus Vincere</h3>
-        </div>
-        <div class="col-md-4">
-          <img src="https://d1u5p3l4wpay3k.cloudfront.net/dota2_gamepedia/thumb/0/05/Team_icon_Natus_Vincere.png/256px-Team_icon_Natus_Vincere.png">
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-2 text-center">
-      <h3>VS</h3>
-    </div>
-
-    <div class="col-md-5">
-      <div class="row">
-        <div class="col-md-4">
-          <img src="https://edb-cdn-prod-tqgiyve.stackpathdns.com/teams/icons/4435f664-ca95-11e7-a833-0ec39221f676.png">
-        </div>
-        <div class="col-md-8 text-left">
-          <h3>Team Liquid</h3>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="row mt-5">
-    <div class="progress" style="width: 100%; height: 40px;">
-      <div class="progress-bar bg-warning" role="progressbar" style="width: 43%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">
-        <strong>43 GGT</strong>
-      </div>
-      <div class="progress-bar bg-info" role="progressbar" style="width: 57%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-        <strong>57 GGT</strong>
-      </div>
-    </div>
-  </div>
-
-  <div class="row mt-4">
-    <h3>Current Bet:</h3>
-  </div>
-  <div class="row">
-    <div class="col-md-6 text-center">
-      0 GGT
-    </div>
-    <div class="col-md-6 text-center">
-      0 GGT
-    </div>
-  </div>
-
-  <div class="row mt-4">
-    <h3>New Bet:</h3>
-  </div>
-  <div class="form-group row">
-    <div class="col-md-6">
-      <input class="form-control" id="ex1" type="text">
-    </div>
-    <div class="col-md-6">
-      <input class="form-control" id="ex1" type="text">
-    </div>
-  </div>
-</div>
-
-
-
-
-
-
-
-
-
-  <div class="col-sm-8 m-4">
-    <h2 class="mb-4">Why bet with us?</h2>
-    <ul>
-      <li class="m-2">We accept only bets on e-sports and major world events.</li>
-      <li class="m-2">We provide an easy to use platform that focuses on the games and not in the betting system.</li>
-      <li class="m-2">Our goal is to improve comunity engagement and allow users to share the wins and losses of your favourite teams.</li>
-      <li class="m-2">Our system is backed by Blockchain technology, allowing for a more secure and transparent system for all users.</li>
-      <li class="m-2">Because our platform puts all the wins and losses in the hands of players it provides a more transparent and fair system for all users.</li>
-      <li class="m-2">Game bets are self-contained, and the bet pool is only dependent on the players. This provides aditional safety for all the payers and the bet rewards are not dependent on our capital.</li>
-      <li class="m-2">The support team works 24/7. Our support staff is ready to help you via chat, e-mail and social media accounts and any of other ways.</li>
-    </ul>
-  </div>
 </div>
 
