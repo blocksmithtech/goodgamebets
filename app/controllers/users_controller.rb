@@ -10,10 +10,9 @@ class UsersController < ApplicationController
     unless @user == current_user
       redirect_to root_path, :alert => "Access denied."
     end
-    now = Time.zone.now
     @amount = @user.balance
-    @active_games = Game.where('closes_at > ?', now)
     @active_bets = current_user.bets.joins(:game).where(games: { played_at: nil })
+    @past_bets = current_user.bets.joins(:game).where('games.played_at != ?', nil)
   end
 
 end
