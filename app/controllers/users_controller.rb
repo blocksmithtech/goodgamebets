@@ -10,11 +10,10 @@ class UsersController < ApplicationController
     unless @user == current_user
       redirect_to root_path, :alert => "Access denied."
     end
-    kit_users = OSTKitService.new.users.list.data['economy_users']
-    kit_user = kit_users.select do |item|
-      item['uuid'] == @user.wallet
-    end
-    @amount = kit_user[0]['token_balance']
+    now = Time.zone.now
+    @amount = @user.balance
+    @active_games = Game.where('closes_at > ?', now)
+    @active_bets = current_user.bets
   end
 
 end

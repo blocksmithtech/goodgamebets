@@ -10,6 +10,14 @@ class User < ApplicationRecord
 
   after_create :generate_wallet
 
+  def balance
+    kit_users = OSTKitService.new.users.list.data['economy_users']
+    kit_user = kit_users.select do |item|
+      item['uuid'] == self.wallet
+    end
+    kit_user[0]['token_balance']
+  end
+
   private
 
     def generate_wallet
