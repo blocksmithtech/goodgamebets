@@ -13,7 +13,7 @@ class UsersController < ApplicationController
     now = Time.zone.now
     @amount = @user.balance
     @active_games = Game.where('closes_at > ?', now)
-    @active_bets = current_user.bets
+    @active_bets = current_user.bets.joins(:game).where(games: { played_at: nil })
   end
 
 end
