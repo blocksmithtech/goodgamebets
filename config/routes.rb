@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users
 
+  resources :bets, only: [:create]
+
   # config/routes.rb
   authenticate :admin_user do
     mount Sidekiq::Web => '/sidekiq'
