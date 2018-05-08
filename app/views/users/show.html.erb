@@ -3,24 +3,33 @@
 <p>You can check you bet history <a href="#">here</a>.</p>
 
 
-<h3>Placed Bets</h3>
+<h3>My Bets</h3>
 
-<ul class="list-group">
-<% @active_bets.each do |bet| %>
-  <%= render 'bets/item', game: bet.game, bet: bet %>
-<% end -%>
+<ul class="nav nav-tabs" id="betTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="current-tab" data-toggle="tab" href="#current" role="tab" aria-controls="current" aria-selected="true">Current</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="past-tab" data-toggle="tab" href="#past" role="tab" aria-controls="past" aria-selected="false">Past</a>
+  </li>
 </ul>
-
-<% if @active_bets.empty? %>
-  <p>You don't have any placed bets.</p>
-<% end -%>
-
-<h3>Available Games</h3>
-
-<% @active_games.each do |game| %>
-  <%= render 'layouts/bet_form', game: game, bet: nil %>
-<% end -%>
-
-<% if @active_games.empty? %>
-  <p>There isn't any game available at this moment to place your bets</p>
-<% end -%>
+<div class="tab-content" id="betTabContent">
+  <div class="tab-pane fade show active" id="current" role="tabpanel" aria-labelledby="current-tab">
+    <ul class="list-group">
+    <% @active_bets.each do |bet| %>
+      <%= render 'bets/item', game: bet.game, bet: bet %>
+    <% end -%>
+    <% if @active_bets.empty? %>
+      <p>You don't have any placed bets.</p>
+    <% end -%>
+    </ul>
+  </div>
+  <div class="tab-pane fade" id="past" role="tabpanel" aria-labelledby="past-tab">
+    <% @past_bets.each do |bet| %>
+      <%= render 'bets/item', game: bet.game, bet: bet %>
+    <% end -%>
+    <% if @past_bets.empty? %>
+      <p>You don't have any placed bets.</p>
+    <% end -%>
+  </div>
+</div>

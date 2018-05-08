@@ -1,0 +1,51 @@
+<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="pills-active-tab" data-toggle="pill" href="#pills-active" role="tab" aria-controls="pills-active" aria-selected="true">Active Games</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="pills-closed-tab" data-toggle="pill" href="#pills-closed" role="tab" aria-controls="pills-closed" aria-selected="false">Closed Games</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="pills-past-tab" data-toggle="pill" href="#pills-past" role="tab" aria-controls="pills-past" aria-selected="false">Past Games</a>
+  </li>
+</ul>
+<div class="tab-content" id="pills-tabContent">
+  <div class="tab-pane fade show active" id="pills-active" role="tabpanel" aria-labelledby="pills-active-tab">
+    <h3>Available Games</h3>
+
+    <% @active_games.each do |game| %>
+      <%= render 'layouts/bet_form', game: game %>
+    <% end -%>
+
+    <% if @active_games.empty? %>
+      <p>There isn't any game available at this moment to place your bets</p>
+    <% end -%>
+  </div>
+  <div class="tab-pane fade" id="pills-closed" role="tabpanel" aria-labelledby="pills-closed-tab">
+    <h3>Closed Games</h3>
+
+    <% @closed_games.each do |game| %>
+      <%= render 'layouts/bet_form', game: game %>
+    <% end -%>
+
+    <% if @closed_games.empty? %>
+      <p>No closed games yet.</p>
+    <% end -%>
+  </div>
+  <div class="tab-pane fade" id="pills-past" role="tabpanel" aria-labelledby="pills-past-tab">
+    <h3>Past Games</h3>
+
+    <% @past_games.each do |game| %>
+      <%= render 'layouts/bet_form', game: game %>
+    <% end -%>
+
+    <% if @past_games.empty? %>
+      <p>No past games yet.</p>
+    <% end -%>
+  </div>
+</div>
+
+
+
+
+
