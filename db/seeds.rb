@@ -24,3 +24,9 @@ Team.create!(name: 'Space Soldiers', country: 'Turkey', logo: 'https://s3-eu-wes
 Team.create!(name: 'Team Envy', country: 'France', logo: 'https://s3-eu-west-1.amazonaws.com/goodgametoken/team_icons/eu/north.png') if Rails.env.development?
 Team.create!(name: 'Team LDLC', country: 'France', logo: 'https://s3-eu-west-1.amazonaws.com/goodgametoken/team_icons/eu/soldiers.png') if Rails.env.development?
 puts 'CREATED EUROPEAN TEAMS'
+
+Game.create(home_team_id: "1", away_team_id: "2", winner_id: "2", played_at: DateTime.new(2018,4,11,18), closes_at: DateTime.new(2018,4,11,20),) if Rails.env.development?
+Game.create(home_team_id: "3", away_team_id: "4", winner_id: "3", played_at: DateTime.new(2018,5,15,18), closes_at: DateTime.new(2018,5,15,20),) if Rails.env.development?
+Game.create(home_team_id: "5", away_team_id: "6", winner_id: "6", played_at: DateTime.new(2018,5,15,21), closes_at: DateTime.new(2018,5,15,23),) if Rails.env.development?
+Game.create(home_team_id: "7", away_team_id: "8", winner_id: "7", played_at: DateTime.new(2018,5,16,18), closes_at: DateTime.new(2018,5,16,20),) if Rails.env.development?
+puts 'CREATED SAMPLE GAMES'

@@ -33,4 +33,5 @@ database:
 	rake db:create db:migrate
 
 clean:
-	docker stop ggt-db && docker rm ggt-db
+	docker stop ggt-db && docker rm ggt-db && \
+	docker stop ggt-redis && docker rm ggt-redis
