@@ -28,6 +28,7 @@ test:
 
 database:
 	docker run -d --name ggt-db -p "5432:5432" -e POSTGRES_USER=goodgamebets -e POSTGRES_PASSWORD="" postgres:alpine && \
+	docker run -d --name ggt-redis -p "6379:6379" redis:alpine && \
 	sleep 5 && \
 	rake db:create db:migrate
 

@@ -8,3 +8,19 @@
 user = CreateAdminService.new.call
 puts 'CREATED ADMIN USER: ' << user.email
 AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+
+Team.create!(name: 'AGO Esports', country: 'Poland', logo: 'https://s3-eu-west-1.amazonaws.com/goodgametoken/team_icons/eu/ago.png') if Rails.env.development?
+Team.create!(name: 'Astralis', country: 'Sweden', logo: 'https://s3-eu-west-1.amazonaws.com/goodgametoken/team_icons/eu/astralis.png') if Rails.env.development?
+Team.create!(name: 'FaZe Clan', country: 'Europe', logo: 'https://s3-eu-west-1.amazonaws.com/goodgametoken/team_icons/eu/envy.png') if Rails.env.development?
+Team.create!(name: 'Fnatic', country: 'Swiss', logo: 'https://s3-eu-west-1.amazonaws.com/goodgametoken/team_icons/eu/faze.png') if Rails.env.development?
+Team.create!(name: 'G2 Esports', country: 'France', logo: 'https://s3-eu-west-1.amazonaws.com/goodgametoken/team_icons/eu/fnatic.png') if Rails.env.development?
+Team.create!(name: 'Hellraisers', country: 'Ukraine', logo: 'https://s3-eu-west-1.amazonaws.com/goodgametoken/team_icons/eu/g2.png') if Rails.env.development?
+Team.create!(name: 'Heroic', country: 'Sweden', logo: 'https://s3-eu-west-1.amazonaws.com/goodgametoken/team_icons/eu/hellraiser.png') if Rails.env.development?
+Team.create!(name: 'mousesports', country: 'Europe', logo: 'https://s3-eu-west-1.amazonaws.com/goodgametoken/team_icons/eu/heroic.png') if Rails.env.development?
+Team.create!(name: 'NAVI.GG.BET', country: 'Ukraine', logo: 'https://s3-eu-west-1.amazonaws.com/goodgametoken/team_icons/eu/ldlc.png') if Rails.env.development?
+Team.create!(name: 'Ninjas in Pyjamas', country: 'Swiss', logo: 'https://s3-eu-west-1.amazonaws.com/goodgametoken/team_icons/eu/mousesports.png') if Rails.env.development?
+Team.create!(name: 'North GG.Bet', country: 'Sweden', logo: 'https://s3-eu-west-1.amazonaws.com/goodgametoken/team_icons/eu/navi.png') if Rails.env.development?
+Team.create!(name: 'Space Soldiers', country: 'Turkey', logo: 'https://s3-eu-west-1.amazonaws.com/goodgametoken/team_icons/eu/ninjas.png') if Rails.env.development?
+Team.create!(name: 'Team Envy', country: 'France', logo: 'https://s3-eu-west-1.amazonaws.com/goodgametoken/team_icons/eu/north.png') if Rails.env.development?
+Team.create!(name: 'Team LDLC', country: 'France', logo: 'https://s3-eu-west-1.amazonaws.com/goodgametoken/team_icons/eu/soldiers.png') if Rails.env.development?
+puts 'CREATED EUROPEAN TEAMS'
