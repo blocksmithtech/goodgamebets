@@ -53,6 +53,8 @@ ActiveRecord::Schema.define(version: 2018_05_09_164042) do
     t.integer "team_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "state", default: 0
+    t.integer "award", default: 0
   end
 
   create_table "games", force: :cascade do |t|
@@ -66,6 +68,9 @@ ActiveRecord::Schema.define(version: 2018_05_09_164042) do
     t.integer "winner_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "home_score", default: 0
+    t.integer "away_score", default: 0
+    t.integer "state", default: 0
   end
 
   create_table "teams", force: :cascade do |t|
