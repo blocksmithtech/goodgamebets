@@ -13,10 +13,12 @@ class Game < ApplicationRecord
     total_waged = self.bets.sum(:amount)
     winners_total = self.bets.where(team: self.winner).sum(:amount)
 
-    winners = update_own_bets total_waged, winners_total
-    SendAwardsJob.perform_later winners
-    self.state = :completed
-    self.save!
+    self.transaction do
+      winners = update_own_bets total_waged, winners_total
+      self.state = :completed
+      self.save!
+      SendAwardsJob.perform_later winners
+    end
   end
 
   private
