@@ -12,4 +12,15 @@ ActiveAdmin.register Game do
   #   permitted << :other if params[:action] == 'create' && current_user.admin?
   #   permitted
   # end
+
+  member_action :mark_as_complete, method: :put do
+    resource.generate_awards!
+    msg = 'The game was marked as completed and awards distributed.'
+    redirect_to resource_path, notice: msg
+  end
+
+  action_item :view, priority: 0, only: :show, if: proc{ !resource.completed? } do
+    link_to 'Mark as Complete', mark_as_complete_admin_game_path, method: :put,
+                                                                  data: {confirm: 'Are you sure?'}
+  end
 end

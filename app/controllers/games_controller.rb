@@ -1,7 +1,8 @@
 class GamesController < ApplicationController
   def index
-    @active_games = Game.where('closes_at > ?', Time.zone.now)
-    @closed_games = []
-    @past_games = []
+    now = Time.zone.now
+    @active_games = Game.where('closes_at > ?', now)
+    @closed_games = Game.where('closes_at < ?', now).where.not(state: :completed)
+    @past_games = Game.where(state: :completed)
   end
 end
