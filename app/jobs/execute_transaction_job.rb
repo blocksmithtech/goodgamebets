@@ -11,6 +11,7 @@ class ExecuteTransactionJob < ApplicationJob
                                   transaction_kind: transaction_name)
 
     if result.http_code != 200 || !result.error_message.blank?
+      puts result.error_message
       raise "Something went wrong with #{to} - #{from} - #{amount}"
     else
       puts "Transaction to #{to} of #{amount} done"

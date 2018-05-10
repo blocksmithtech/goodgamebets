@@ -15,7 +15,7 @@ class User < ApplicationRecord
     kit_user = kit_users.select do |item|
       item['uuid'] == self.wallet
     end
-    kit_user[0]['token_balance']
+    kit_user[0]['token_balance'].to_f
   end
 
   private
