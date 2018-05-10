@@ -18,7 +18,7 @@ class BetsController < ApplicationController
     end
 
     result = place_bet
-    if result.http_code == 200
+    if result.http_code == 200 && result.error_message.blank?
       save_bet
     else
       flash[:error] = 'A problem occured while placing the bet. Try again later'

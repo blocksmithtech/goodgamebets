@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :users
 
   resources :bets, only: [:create]
-  resources :games, only: [:index]
+  resources :games, only: [:index, :show]
 
   # config/routes.rb
   authenticate :admin_user do

@@ -14,6 +14,7 @@ ActiveAdmin.register Game do
   # end
 
   member_action :mark_as_complete, method: :put do
+    return redirect_to resource_path, alert: "Winner is empty" if resource.winner.nil?
     resource.generate_awards!
     msg = 'The game was marked as completed and awards distributed.'
     redirect_to resource_path, notice: msg

@@ -1,1 +1,10 @@
-<li class="list-group-item">Placed <%= bet.amount %> on <%= bet.team.name %> </li>
+<a class="list-group-item list-group-item-action <% if bet.lost? %>list-group-item-danger <% elsif bet.won?%>list-group-item-success<% end%>" href="<%= game_path(game) %>">
+  <%= bet.created_at %> - Placed <%= bet.amount %> GGT on <%= bet.team.name %>
+  <% if game.completed? %>
+    <% if bet.won? %>
+      and won <%= bet.award %> GGT
+    <% else %>
+      and lost
+    <% end -%>
+  <% end -%>
+</a>

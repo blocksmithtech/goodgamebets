@@ -14,7 +14,7 @@
     <h3>Available Games</h3>
 
     <% @active_games.each do |game| %>
-      <%= render 'layouts/bet_form', game: game %>
+      <%= render 'layouts/bet_form', game: game, link: true %>
     <% end -%>
 
     <% if @active_games.empty? %>
@@ -25,7 +25,7 @@
     <h3>Closed Games</h3>
 
     <% @closed_games.each do |game| %>
-      <%= render 'layouts/bet_form', game: game %>
+      <%= render 'layouts/bet_form', game: game, link: true %>
     <% end -%>
 
     <% if @closed_games.empty? %>
@@ -36,7 +36,7 @@
     <h3>Past Games</h3>
 
     <% @past_games.each do |game| %>
-      <%= render 'layouts/bet_form', game: game %>
+      <%= render 'layouts/bet_form', game: game, link: true %>
     <% end -%>
 
     <% if @past_games.empty? %>
