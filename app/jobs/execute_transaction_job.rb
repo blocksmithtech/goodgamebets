@@ -1,7 +1,7 @@
 class ExecuteTransactionJob < ApplicationJob
   queue_as :default
 
-  def perform(to, from, amount)
+  def perform(to, from, amount, bet_id)
     transactions = OSTKitService.new.transactions
 
     transaction_name = get_transaction_name(transactions, amount)
@@ -15,6 +15,7 @@ class ExecuteTransactionJob < ApplicationJob
       raise "Something went wrong with #{to} - #{from} - #{amount}"
     else
       puts "Transaction to #{to} of #{amount} done"
+      UserMailer.with(bet_id: bet_id).reward_notification.deliver
     end
   end
 

@@ -7,7 +7,8 @@ class SendAwardsJob < ApplicationJob
     bets.each do |bet|
       ExecuteTransactionJob.perform_later(bet.user.wallet,
                                           bet.game.wallet,
-                                          bet.award)
+                                          bet.award,
+                                          bet.id)
     end
     puts 'All Transactions ordered'
   end
