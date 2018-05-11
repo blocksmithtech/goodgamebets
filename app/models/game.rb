@@ -8,6 +8,8 @@ class Game < ApplicationRecord
 
   enum state: { created: 0, archived: 1, completed: 2 }
 
+  before_create :add_wallet
+
   def generate_awards!
     return if self.completed?
     total_waged = self.bets.sum(:amount)
@@ -39,5 +41,9 @@ class Game < ApplicationRecord
       end
     end
     winners
+  end
+
+  def add_wallet
+    self.wallet = Rails.application.secrets.company_wallet if self.wallet.blank?
   end
 end
