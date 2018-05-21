@@ -1,5 +1,6 @@
 #
 class BetsController < ApplicationController
+  before_action :authenticate_user!
   before_action :find_game
 
   def create
@@ -8,13 +9,13 @@ class BetsController < ApplicationController
 
     if @game.closes_at < Time.zone.now
       flash[:error] = 'The time period for bets has expired'
-      return redirect_to user_path(current_user)
+      return redirect_to dashboard_path
     elsif current_user.balance < @amount
       flash[:error] = 'Insuficient funds'
-      return redirect_to user_path(current_user)
+      return redirect_to dashboard_path
     elsif @game.home_team_id != @team_id && @game.away_team_id != @team_id
       flash[:error] = 'Invalid team'
-      return redirect_to user_path(current_user)
+      return redirect_to dashboard_path
     end
 
     result = place_bet
@@ -22,7 +23,7 @@ class BetsController < ApplicationController
       save_bet
     else
       flash[:error] = 'A problem occured while placing the bet. Try again later'
-      redirect_to user_path(current_user)
+      redirect_to dashboard_path
     end
   end
 
@@ -37,7 +38,7 @@ class BetsController < ApplicationController
     return unless @game.blank?
 
     flash[:error] = 'Invalid game'
-    redirect_to user_path(current_user)
+    redirect_to dashboard_path
   end
 
   def place_bet
