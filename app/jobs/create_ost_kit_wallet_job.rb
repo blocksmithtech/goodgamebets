@@ -10,5 +10,7 @@ class CreateOstKitWalletJob < ApplicationJob
     user.wallet = response.data['economy_users'][0]['uuid']
     user.save
     puts 'New Wallet created successfully'
+    AirdropJob.perform_later
+    puts 'Scheduled Airdrop'
   end
 end
