@@ -5,7 +5,8 @@ Rails.application.routes.draw do
 
   root to: 'visitors#index'
   devise_for :users
-  resources :users
+
+  get 'dashboard' => 'users#index'
 
   resources :bets, only: [:create]
   resources :games, only: [:index, :show]
