@@ -11,7 +11,7 @@
 </ul>
 <div class="tab-content" id="pills-tabContent">
   <div class="tab-pane fade show active" id="pills-active" role="tabpanel" aria-labelledby="pills-active-tab">
-    <h3>Available Games</h3>
+    <h2>Available Games</h2>
 
     <% @active_games.each do |game| %>
       <%= render 'layouts/bet_form', game: game, link: true %>
