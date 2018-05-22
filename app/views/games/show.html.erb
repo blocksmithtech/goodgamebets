@@ -4,7 +4,17 @@
 
 <div class="row">
   <div class="col-md-12">
-    <img data-src="holder.js/100px250" class="img-fluid" alt="100%x250" style="height: 400px; width: 100%; display: block;" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22774%22%20height%3D%22250%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20774%20250%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_1634a284a21%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A39pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_1634a284a21%22%3E%3Crect%20width%3D%22774%22%20height%3D%22250%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22287%22%20y%3D%22144.5%22%3E774x250%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-holder-rendered="true">
+    <% if @game.stream_url %>
+      <% if video_provider(@game.stream_url) == 'www.youtube.com' %>
+        <iframe width="100%" height="400" src="https://www.youtube-nocookie.com/embed/<%= parse_youtube_video_id(@game.stream_url) %>" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      <% elsif video_provider(@game.stream_url) == 'www.twitch.tv' %>
+        <iframe src="https://player.twitch.tv/?<% if twitch_channel?(@game.stream_url) %>channel=<% else %>video=v<% end %><%= parse_twitch_video_id(@game.stream_url) %>" frameborder="0" allowfullscreen="true" scrolling="no" height="400" width="100%"></iframe>
+      <% else %>
+        Unsupported provider. You can follow the game in the following URL: <a href="<%= @game.stream_url %>">Click here to watch</a>
+      <% end %>
+    <% else %>
+    <img data-src="holder.js/100px250" class="img-fluid" alt="100%x250" style="height: 400px; width: 100%; display: block;" src="https://via.placeholder.com/1400x600?text=Stream%20will%20play%20here%20Soon"true">
+    <% end -%>
   </div>
 </div>
 <% if current_user %>

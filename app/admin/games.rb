@@ -3,7 +3,7 @@ ActiveAdmin.register Game do
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
   permit_params :home_team_id, :away_team_id, :winner_id, :closes_at, :played_at, :wallet,
-              :gametype, :wallet, :home_score, :away_score, :state
+              :gametype, :wallet, :home_score, :away_score, :state, :stream_url
   #
   # or
   #
