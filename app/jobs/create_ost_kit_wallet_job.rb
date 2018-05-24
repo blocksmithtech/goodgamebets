@@ -10,6 +10,7 @@ class CreateOstKitWalletJob < ApplicationJob
     puts "==============="
     puts response.data
     puts response.error_message
+    puts response.error_data
     user.wallet = response.data['economy_users'][0]['uuid']
     user.save
     puts 'New Wallet created successfully'
