@@ -36,12 +36,12 @@ if Game.count == 0
 	Game.create(home_team_id: space.id,away_team_id: ast.id,home_score: "11",away_score: "16",state: 2, winner_id: ast.id,played_at: DateTime.new(2018,4,26,18),closes_at: DateTime.new(2018,4,26,20), stream_url: "https://www.youtube.com/watch?v=99rOjpcwPrk",)
 	puts 'CREATED PAST GAMES'
 
-	Game.create(home_team_id: faze.id,away_team_id: ast.id, state: 0, played_at: DateTime.new(2018,5,24,18),closes_at: DateTime.new(2018,5,30,20),)
-	Game.create(home_team_id: space.id,away_team_id: fnatic.id , state: 0, played_at: DateTime.new(2018,5,24,18),closes_at: DateTime.new(2018,5,30,20),)
+	Game.create(home_team_id: faze.id,away_team_id: ast.id, state: 0, played_at: DateTime.new(2018,5,24,18),closes_at: DateTime.new(2018,5,24,17),)
+	Game.create(home_team_id: space.id,away_team_id: fnatic.id , state: 0, played_at: DateTime.new(2018,5,24,18),closes_at: DateTime.new(2018,5,24,17),)
 	puts 'CREATED CURRENT GAMES'
 
-	Game.create(home_team_id: ago.id,away_team_id: g2.id, state: 0, played_at: DateTime.new(2018,5,30,18),closes_at: DateTime.new(2018,6,3,20),)
-	Game.create(home_team_id: np.id,away_team_id: envy.id, state: 0, played_at: DateTime.new(2018,5,30,18),closes_at: DateTime.new(2018,6,3,20),)
-	Game.create(home_team_id: ms.id,away_team_id: hr.id, state: 0, played_at: DateTime.new(2018,5,30,18),closes_at: DateTime.new(2018,6,3,20),)
+	Game.create(home_team_id: ago.id,away_team_id: g2.id, state: 0, played_at: DateTime.new(2018,6,3,18),closes_at: DateTime.new(2018,6,3,17),)
+	Game.create(home_team_id: np.id,away_team_id: envy.id, state: 0, played_at: DateTime.new(2018,6,3,18),closes_at: DateTime.new(2018,6,3,17),)
+	Game.create(home_team_id: ms.id,away_team_id: hr.id, state: 0, played_at: DateTime.new(2018,6,3,18),closes_at: DateTime.new(2018,6,3,17),)
 	puts 'CREATED FUTURE GAMES'
 end
