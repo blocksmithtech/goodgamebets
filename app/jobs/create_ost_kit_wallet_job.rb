@@ -9,6 +9,7 @@ class CreateOstKitWalletJob < ApplicationJob
     response = ost_users.create(name: user.email.parameterize(separator: ' '))
     puts "==============="
     puts response.data
+    puts response.error_message
     user.wallet = response.data['economy_users'][0]['uuid']
     user.save
     puts 'New Wallet created successfully'
