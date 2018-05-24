@@ -166,3 +166,7 @@ font-size: 2rem !important;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.5);
 }
+
+.nav-pills > li > a.active {
+    background-color: #6c757d!important;
+}
