@@ -11,6 +11,8 @@ class CreateOstKitWalletJob < ApplicationJob
     puts response.data
     puts response.error_message
     puts response.error_data
+    puts response.error_display_text
+    puts response.error_display_heading
     user.wallet = response.data['economy_users'][0]['uuid']
     user.save
     puts 'New Wallet created successfully'
