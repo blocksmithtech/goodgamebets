@@ -16,7 +16,7 @@
     <% if current_user && game.closes_at > Time.zone.now %>
     <div class="row">
       <div class="mx-auto">
-        <div class="btn-group btn-group-lg" role="group" aria-label="Basic example">
+        <div class="btn-group btn-group-lg" role="group" aria-label="Basic example" style="padding: 10px">
           <button type="button" class="btn btn-primary" disabled>Bet: </button>
           <%= button_to "1 GGT", bets_path, class: "btn btn-secondary btn-lg no-radius", method: 'post', params: { game_id: game.id, team_id: game.home_team_id, amount: 1} %>
           <%= button_to "5 GGT", bets_path, class: "btn btn-secondary btn-lg no-radius", method: 'post', params: { game_id: game.id, team_id: game.home_team_id, amount: 5} %>
@@ -48,7 +48,7 @@
     <% if current_user && game.closes_at > Time.zone.now %>
     <div class="row">
       <div class="mx-auto">
-        <div class="btn-group btn-group-lg" role="group" aria-label="Basic example">
+        <div class="btn-group btn-group-lg" role="group" aria-label="Basic example" style="padding: 10px">
           <button type="button" class="btn btn-primary" disabled>Bet: </button>
           <%= button_to "1 GGT", bets_path, class: "btn btn-secondary btn-lg no-radius", method: 'post', params: { game_id: game.id, team_id: game.away_team_id, amount: 1} %>
           <%= button_to "5 GGT", bets_path, class: "btn btn-secondary btn-lg no-radius", method: 'post', params: { game_id: game.id, team_id: game.away_team_id, amount: 5} %>
