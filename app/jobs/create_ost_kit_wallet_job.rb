@@ -7,6 +7,8 @@ class CreateOstKitWalletJob < ApplicationJob
     puts "Generating Wallet for user #{user.name}"
     ost_users = OSTKitService.new.users
     response = ost_users.create(name: user.email.parameterize(separator: ' '))
+    puts "==============="
+    puts response.data
     user.wallet = response.data['economy_users'][0]['uuid']
     user.save
     puts 'New Wallet created successfully'
