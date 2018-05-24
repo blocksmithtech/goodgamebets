@@ -10,7 +10,7 @@ user = CreateAdminService.new.call
 if AdminUser.count == 0
 	puts 'CREATED ADMIN USER: ' << user.email
 	AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
-end 
+end
 
 if Team.count == 0
 	Team.create!(name: 'AGO Esports', country: 'Poland', logo: 'https://s3-eu-west-1.amazonaws.com/goodgametoken/team_icons/eu/ago.png')
@@ -43,12 +43,12 @@ if Game.count == 0
 	Game.create(home_team_id: "11",away_team_id: "1",home_score: "11",away_score: "16",state: 2, winner_id: "1",played_at: DateTime.new(2018,4,26,18),closes_at: DateTime.new(2018,4,26,20), stream_url: "https://www.youtube.com/watch?v=99rOjpcwPrk",)
 	puts 'CREATED PAST GAMES'
 
-	Game.create(home_team_id: "2",away_team_id: "1", state: 0, played_at: DateTime.new(2018,5,23,18),closes_at: DateTime.new(2018,5,30,20),)
-	Game.create(home_team_id: "11",away_team_id: "3", state: 0, played_at: DateTime.new(2018,5,23,18),closes_at: DateTime.new(2018,5,30,20),)
+	Game.create(home_team_id: "2",away_team_id: "1", state: 0, played_at: DateTime.new(2018,5,26,18),closes_at: DateTime.new(2018,5,24,20),)
+	Game.create(home_team_id: "11",away_team_id: "3", state: 0, played_at: DateTime.new(2018,5,26,18),closes_at: DateTime.new(2018,5,24,20),)
 	puts 'CREATED CURRENT GAMES'
 
-	Game.create(home_team_id: "0",away_team_id: "4", state: 0, played_at: DateTime.new(2018,5,30,18),closes_at: DateTime.new(2018,6,3,20),)
-	Game.create(home_team_id: "9",away_team_id: "12", state: 0, played_at: DateTime.new(2018,5,30,18),closes_at: DateTime.new(2018,6,3,20),)
-	Game.create(home_team_id: "7",away_team_id: "5", state: 0, played_at: DateTime.new(2018,5,30,18),closes_at: DateTime.new(2018,6,3,20),)
+	Game.create(home_team_id: "0",away_team_id: "4", state: 0, played_at: DateTime.new(2018,6,30,18),closes_at: DateTime.new(2018,6,3,20),)
+	Game.create(home_team_id: "9",away_team_id: "12", state: 0, played_at: DateTime.new(2018,6,30,18),closes_at: DateTime.new(2018,6,3,20),)
+	Game.create(home_team_id: "7",away_team_id: "5", state: 0, played_at: DateTime.new(2018,6,30,18),closes_at: DateTime.new(2018,6,3,20),)
 	puts 'CREATED FUTURE GAMES'
 end
